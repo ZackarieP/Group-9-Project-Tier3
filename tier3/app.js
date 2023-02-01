@@ -27,9 +27,7 @@ app.post("/upload", (req, res) => {
 
     fs.writeFile(__dirname + "/files/" + req.body.name, data, (err) => {
         if (err) console.log(err); else {
-            console.log("File written successfully\n");
-            console.log("The written has the following contents:");
-            // console.log(fs.readFileSync(__dirname + "/files/" + req.body.name, "utf8"));
+            res.send("File written successfully\n");
         }
     });
 });
